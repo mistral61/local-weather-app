@@ -22,10 +22,16 @@ interface ICurrentWeatherData {
   name: string
 }
 
+export interface IWeatherService {
+  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>
+}
+
+// https://blog.ninja-squad.com/2018/05/04/what-is-new-angular-6/
+// we declare that this service should be created by the root application injector
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherService {
+export class WeatherService implements IWeatherService {
   constructor(private httpClient: HttpClient) {}
 
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
