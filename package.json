@@ -6,6 +6,7 @@
     "standardize": "prettier **/*.ts --write",
     "start": "npm run standardize && ng serve --port 5000",
     "build": "npm run standardize && ng build",
+    "test:debug": "ng test --sourcemaps=false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
